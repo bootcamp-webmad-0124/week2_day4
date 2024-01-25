@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>El contador se ha ejecutado <span></span> veces</h1>
+
+    <button>Anular contador</button>
+
+
+    <script>
+
+        let counterValue = 0
+
+        const intervalID = setInterval(() => {
+            counterValue++
+            document.querySelector('h1 span').innerHTML = counterValue
+        }, 1000)
+
+
+        document.querySelector('button').onclick = () => {
+            console.log('EL intervalo con ID número', intervalID, 'se ha detenido')
+            clearInterval(intervalID)
+        }
+
+    </script>
+</body>
+
+</html>
